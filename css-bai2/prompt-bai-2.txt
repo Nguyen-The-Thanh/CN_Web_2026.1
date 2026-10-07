@@ -1,0 +1,23 @@
+Bạn được cung cấp hai file của một trang khuyến mãi Tết: `trang.html` và `style-loi.css`.
+
+Nhiệm vụ: chỉ sửa CSS để trang hiển thị đúng, tuyệt đối không thay đổi HTML.
+
+Yêu cầu hiển thị bắt buộc:
+- Thanh menu trên cùng phải sticky khi cuộn và luôn nằm trên phần hero.
+- Ảnh hero phải phủ kín khung; phần tiêu đề/nội dung hero nằm chính giữa ảnh.
+- Ba thẻ sản phẩm phải nằm trên cùng một hàng ở kích thước desktop hiện tại.
+- Mỗi nhãn “-20%” phải nằm ở góc trên bên phải của chính thẻ sản phẩm và luôn hiển thị phía trên ảnh.
+- Ảnh và nội dung phải nằm gọn trong từng card.
+- Nút “↑” phải fixed ở góc dưới bên phải viewport khi cuộn.
+
+Ràng buộc quan trọng:
+1. Không sửa `trang.html`.
+2. Không đổi nội dung, class, id hay cấu trúc DOM.
+3. Chỉ sửa các lỗi CSS thật sự gây sai box model hoặc position.
+4. Ưu tiên thay đổi tối thiểu; không viết lại toàn bộ stylesheet.
+5. Không xóa/chỉnh những đoạn nhìn có vẻ lạ nhưng đang đúng và cần thiết, đặc biệt các quy tắc liên quan tới hero crop/scale, z-index của header, negative margin của `.products`, kích thước ảnh card và nút back-to-top nếu chúng đã đáp ứng yêu cầu.
+6. Khi chẩn đoán sticky, hãy kiểm tra các ancestor của `.site-header` có thuộc tính overflow nào vô tình tạo scrolling ancestor hay không.
+7. Khi chẩn đoán card bị rớt hàng, hãy tính cả flex-basis, gap, padding, border và `box-sizing`.
+8. Khi chẩn đoán badge, hãy kiểm tra containing block và stacking order giữa `.badge` và `.card img`.
+9. Sau khi sửa, giải thích ngắn gọn từng lỗi theo dạng: selector → nguyên nhân → thay đổi CSS.
+10. Cuối cùng trả về toàn bộ nội dung `style-loi.css` đã sửa, không dùng dấu `...`.

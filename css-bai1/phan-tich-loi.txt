@@ -1,0 +1,23 @@
+BÀI TẬP 1 — PHÂN TÍCH LỖI CSS
+
+1. Sticky header
+- .site-header có position: sticky nhưng thiếu top: 0 nên không có ngưỡng bám.
+- Thiếu z-index nên header có thể bị nội dung/ảnh che khi cuộn.
+
+2. Hero
+- .hero thiếu position: relative, nên .hero-overlay (absolute) không định vị theo khung hero.
+- .hero-bg có width/height 100% nhưng thiếu object-fit: cover nên ảnh bị kéo méo thay vì phủ kín khung.
+
+3. Ba card sản phẩm
+- Box model mặc định là content-box; flex-basis + padding + border làm tổng chiều rộng vượt quá hàng.
+- .card-list cho wrap nên card thứ ba có thể rớt xuống hàng mới khi tổng kích thước vượt khung.
+- .card thiếu position: relative nên badge absolute không bám theo từng card.
+- .card có height cố định 300px, trong khi nội dung + ảnh có thể vượt ra ngoài; để chiều cao tự giãn theo nội dung.
+- Ảnh card chưa bị giới hạn kích thước, nên bổ sung width: 100%, height cố định và object-fit: cover để nằm gọn trong card.
+- badge thêm z-index để luôn nổi trên ảnh.
+
+4. Nút lên đầu trang
+- .back-to-top đang dùng top: 24px nên nằm góc trên bên phải.
+- Yêu cầu là góc dưới bên phải, vì vậy phải dùng bottom: 24px; thêm z-index để nút luôn nổi.
+
+Các thay đổi chỉ nằm trong CSS, file trang.html được giữ nguyên.
